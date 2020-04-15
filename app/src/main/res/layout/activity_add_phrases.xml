@@ -6,4 +6,41 @@
     android:layout_height="match_parent"
     tools:context=".AddPhrases">
 
+    <EditText
+        android:id="@+id/editText_addphrase"
+        android:layout_width="272dp"
+        android:layout_height="47dp"
+        android:ems="10"
+        android:hint="@string/enter_word_or_phrase"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.421"
+        android:autofillHints="" tools:targetApi="o" />
+
+    <Button
+        android:id="@+id/button_savePhrase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_addphrase"
+        app:layout_constraintVertical_bias="0.353" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/add_an_english_word_or_phrase_that_you_want_to_master_in_another_language"
+        app:layout_constraintBottom_toTopOf="@+id/editText_addphrase"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

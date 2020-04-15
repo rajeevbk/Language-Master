@@ -6,4 +6,24 @@
     android:layout_height="match_parent"
     tools:context=".DisplayPhrases">
 
+    <ScrollView
+        android:id="@+id/scrollView_scrollView"
+        android:layout_width="412dp"
+        android:layout_height="589dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView_displayPhrases"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:textSize="18sp" />
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
