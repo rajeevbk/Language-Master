@@ -6,11 +6,14 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.SparseBooleanArray;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckedTextView;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -45,16 +48,16 @@ import java.util.GregorianCalendar;
 
 public class Translate extends AppCompatActivity {
 
+    private static String[] FROM = {_ID, COLUMN_NAME_PHRASE};
+    private static String ORDER_BY = COLUMN_NAME_PHRASE + " ASC";
     protected ListView phrasesList;
     protected Spinner languageSubscriptionList;
     protected Button translate;
     protected TextView translation;
-    private ArrayList<String> arrayListListView;
-    private ArrayList<String> arrayListSpinner;
     ArrayAdapter arrayAdapterListView;
     ArrayAdapter arrayAdapterSpinner;
-    private static String[] FROM = {_ID, COLUMN_NAME_PHRASE};
-    private static String ORDER_BY = COLUMN_NAME_PHRASE + " ASC";
+    private ArrayList<String> arrayListListView;
+    private ArrayList<String> arrayListSpinner;
     private LanguageTranslator translationService;
 
     private StreamPlayer player = new StreamPlayer();
@@ -86,6 +89,25 @@ public class Translate extends AppCompatActivity {
         //set arrayAdapterListView with above array list
         arrayAdapterListView = new ArrayAdapter(getApplicationContext(), android.R.layout.simple_list_item_single_choice, arrayListListView);
         phrasesList.setAdapter(arrayAdapterListView); //display array list in list view
+
+        phrasesList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView arg0, View view, int position,
+                                    long itemId) {
+                CheckedTextView textView = (CheckedTextView) view;
+                for (int i = 0; i < phrasesList.getCount(); i++) {
+                    textView= (CheckedTextView) phrasesList.getChildAt(i);
+                    if (textView != null) {
+                        textView.setTextColor(Color.BLACK);
+                    }
+                }
+                phrasesList.invalidate();
+                textView = (CheckedTextView) view;
+                if (textView != null) {
+                    textView.setTextColor(Color.BLUE);
+                }
+            }
+        });
 
         //set language subscriptions in spinner
         //get checked langs into array list
@@ -129,6 +151,25 @@ public class Translate extends AppCompatActivity {
         return service;
     }
 
+    public void pronounce(View view) {
+        //get correct voice option from map
+        String voice = " ";
+        if(voiceOptions.get(translateToLanguage) != null){
+            voice = voiceOptions.get(translateToLanguage);
+        }else {voice = "en-US_AllisonV3Voice";}
+        //get the text to pronounce
+        String textToPronounce = translation.getText().toString();
+        System.out.println(textToPronounce);
+        new SynthesisTask().execute(textToPronounce,voice);
+    }
+
+    private TextToSpeech initTextToSpeechService() {
+        Authenticator authenticator = new IamAuthenticator(getString(R.string.text_speech_apikey));
+        TextToSpeech service = new TextToSpeech(authenticator);
+        service.setServiceUrl(getString(R.string.text_speech_url));
+        return service;
+    }
+
     private class TranslationTask extends AsyncTask<String, Void, String> {
         ProgressDialog progDailog;
 
@@ -159,24 +200,6 @@ public class Translate extends AppCompatActivity {
         }
     }
 
-    public void pronounce(View view) {
-        //get correct voice option from map
-        String voice = " ";
-        if(voiceOptions.get(translateToLanguage) != null){
-            voice = voiceOptions.get(translateToLanguage);
-        }else {voice = "en-US_AllisonV3Voice";}
-        //get the text to pronounce
-        String textToPronounce = translation.getText().toString();
-        System.out.println(textToPronounce);
-        new SynthesisTask().execute(textToPronounce,voice);
-    }
-
-    private TextToSpeech initTextToSpeechService() {
-        Authenticator authenticator = new IamAuthenticator(getString(R.string.text_speech_apikey));
-        TextToSpeech service = new TextToSpeech(authenticator);
-        service.setServiceUrl(getString(R.string.text_speech_url));
-        return service;
-    }
     private class SynthesisTask extends AsyncTask<String, Void, String>
     {
         ProgressDialog progDailog;
@@ -209,7 +232,6 @@ public class Translate extends AppCompatActivity {
             super.onPostExecute(s);
             progDailog.dismiss();
         }
-
 
     }
 

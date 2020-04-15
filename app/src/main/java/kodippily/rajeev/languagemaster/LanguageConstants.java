@@ -1,6 +1,5 @@
 package kodippily.rajeev.languagemaster;
 import android.provider.BaseColumns;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;

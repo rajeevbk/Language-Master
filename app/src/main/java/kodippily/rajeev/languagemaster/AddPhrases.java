@@ -34,13 +34,18 @@ public class AddPhrases extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String phraseString = phrase.getText().toString();
-                // Add String to sqlite db here
-                try {
-                    addPhrase(phraseString);
-                } catch (Exception e) {
-                    System.out.println("An error occured while trying to add a phrase.");
+                System.out.println("String" +phraseString);
+                if (phraseString.isEmpty())
+                 alert("Error", "Please enter a valid word/phrase");
+                else {
+                    // Add String to sqlite db here
+                    try {
+                        addPhrase(phraseString);
+                    } catch (Exception e) {
+                        System.out.println("An error occured while trying to add a phrase.");
+                    }
+                    alert("Saved following phrase in Database!", phraseString);
                 }
-                alert("Saved following phrase in Database!", phraseString);
             }
         });
     }
