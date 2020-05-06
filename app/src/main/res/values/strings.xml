@@ -10,4 +10,8 @@
     <string name="language_translator_url">https://api.jp-tok.language-translator.watson.cloud.ibm.com/instances/c0f16351-2d36-4a86-9da8-1e6f5381b42a</string>
     <string name="text_speech_apikey">vxpk3LZE98x7U67kPTEBXp-gJbk7Rsv6s2hfnuPX1QEx</string>
     <string name="text_speech_url">https://api.jp-tok.text-to-speech.watson.cloud.ibm.com/instances/c38e4ae2-dd6a-405e-98b1-0118a03cb12b</string>
+    <string name="select_lang_string">Select Language from list below to Translate and use in offline mode</string>
+    <string name="offline_message">You can view your saved translations here, please pick a language from the following list</string>
+    <string name="view_phrases_Button">View Phrases</string>
+    <string name="update_id">Update</string>
 </resources>

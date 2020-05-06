@@ -8,22 +8,68 @@
 
     <ScrollView
         android:id="@+id/scrollView_scrollView"
-        android:layout_width="412dp"
-        android:layout_height="589dp"
+        android:layout_width="358dp"
+        android:layout_height="337dp"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
+        android:background="@drawable/customshape"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.592"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.058">
 
         <TextView
-            android:id="@+id/textView_displayPhrases"
+            android:id="@+id/textView_translations"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:gravity="center"
             android:orientation="vertical"
-            android:textSize="18sp" />
+            android:textSize="24sp" />
     </ScrollView>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/select_lang_string"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView_scrollView"
+        app:layout_constraintVertical_bias="0.205" />
+
+    <Spinner
+        android:id="@+id/spinner_select_language"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="gravity"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintVertical_bias="0.242" />
+
+    <Button
+        android:id="@+id/button_saveOffline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:onClick="save"
+        android:text="@string/save"
+        android:textAlignment="gravity"
+        android:textColor="@android:color/background_light"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_select_language"
+        app:layout_constraintVertical_bias="0.386" />
 </androidx.constraintlayout.widget.ConstraintLayout>

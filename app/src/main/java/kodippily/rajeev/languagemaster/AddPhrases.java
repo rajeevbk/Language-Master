@@ -11,8 +11,6 @@ import static android.provider.BaseColumns._ID;
 import static kodippily.rajeev.languagemaster.PhraseConstants.TABLE_NAME_PHRASE;
 import static kodippily.rajeev.languagemaster.PhraseConstants.COLUMN_NAME_PHRASE;
 import static kodippily.rajeev.languagemaster.MainActivity.data;
-
-
 import android.content.ContentValues;
 import android.database.sqlite.SQLiteDatabase;
 

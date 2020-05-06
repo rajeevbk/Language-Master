@@ -5,22 +5,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity" >
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp"
+    tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/textView_main_heading"
-        android:layout_width="match_parent"
-        android:layout_height="146dp"
+        android:layout_width="381dp"
+        android:layout_height="121dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="10dp"
-        android:background="#03A9F4"
+        android:background="@color/colorPrimaryDark"
         android:gravity="center"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
         android:text="Language Master"
-        android:textAllCaps="true"
-        android:textColor="#673AB7"
-        android:textColorHighlight="#4CAF50"
-        android:textSize="36sp"
+        android:textAllCaps="false"
+        android:textColor="@android:color/background_light"
+        android:textColorHighlight="@color/colorPrimary"
+        android:textSize="40sp"
         android:textStyle="italic" />
 
     <Button
@@ -30,7 +34,9 @@
         android:layout_marginLeft="10dp"
         android:layout_marginTop="50dp"
         android:layout_marginRight="10dp"
+        android:background="@color/colorPrimary"
         android:text="Add Phrases"
+        android:textColor="@android:color/background_light"
         android:textSize="18sp" />
 
     <Button
@@ -40,7 +46,9 @@
         android:layout_marginLeft="10dp"
         android:layout_marginTop="18dp"
         android:layout_marginRight="10dp"
+        android:background="@color/colorPrimary"
         android:text="Display Phrases"
+        android:textColor="@android:color/background_light"
         android:textSize="18sp" />
 
     <Button
@@ -50,7 +58,9 @@
         android:layout_marginLeft="10dp"
         android:layout_marginTop="18dp"
         android:layout_marginRight="10dp"
+        android:background="@color/colorPrimary"
         android:text="Edit Phrases"
+        android:textColor="@android:color/background_light"
         android:textSize="18sp" />
 
     <Button
@@ -60,7 +70,9 @@
         android:layout_marginLeft="10dp"
         android:layout_marginTop="18dp"
         android:layout_marginRight="10dp"
+        android:background="@color/colorPrimary"
         android:text="Language Subscription"
+        android:textColor="@android:color/background_light"
         android:textSize="18sp" />
 
     <Button
@@ -70,7 +82,22 @@
         android:layout_marginLeft="10dp"
         android:layout_marginTop="18dp"
         android:layout_marginRight="10dp"
+        android:background="@color/colorPrimary"
         android:text="Translate"
+        android:textColor="@android:color/background_light"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/button_offline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="0dp"
+        android:background="@color/colorPrimary"
+        android:text="Offline Mode"
+        android:textColor="@android:color/background_light"
         android:textSize="18sp" />
 
 

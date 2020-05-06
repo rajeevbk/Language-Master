@@ -18,6 +18,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
         android:choiceMode="singleChoice"
+        android:background="@drawable/customshape"
 
         />
 
@@ -39,21 +40,27 @@
         android:id="@+id/button_edit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
         android:onClick="editPhrase"
         android:text="Edit"
+        android:textColor="@android:color/background_light"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.263"
+        app:layout_constraintHorizontal_bias="0.278"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText_editPhrase"
-        app:layout_constraintVertical_bias="0.505" />
+        app:layout_constraintVertical_bias="0.504" />
 
     <Button
         android:id="@+id/button_save"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
         android:onClick="savePhrase"
         android:text="save"
+        android:textColor="@android:color/background_light"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.718"

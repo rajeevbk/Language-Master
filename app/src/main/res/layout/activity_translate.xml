@@ -27,6 +27,7 @@
         android:layout_width="386dp"
         android:layout_height="24dp"
         android:gravity="center"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.48"
@@ -36,9 +37,10 @@
 
     <TextView
         android:id="@+id/textView_selectLanguage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="141dp"
+        android:layout_height="34dp"
         android:text="@string/select_language"
+        android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/spinner_languageList"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -46,37 +48,44 @@
 
     <Button
         android:id="@+id/button_translate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="131dp"
+        android:layout_height="51dp"
+        android:background="@color/colorPrimary"
         android:onClick="translate"
         android:text="@string/translate"
+        android:textColor="@android:color/background_light"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinner_languageList"
-        app:layout_constraintVertical_bias="0.161" />
+        app:layout_constraintVertical_bias="0.101" />
 
     <TextView
         android:id="@+id/textView_translation"
         android:layout_width="371dp"
         android:layout_height="42dp"
-        android:textSize="14sp"
+        android:background="@drawable/customshape"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_translate"
-        app:layout_constraintVertical_bias="0.126" />
+        app:layout_constraintVertical_bias="0.204" />
 
     <Button
         android:id="@+id/button_pronounce"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="128dp"
+        android:layout_height="48dp"
+        android:background="@color/colorPrimary"
         android:onClick="pronounce"
         android:text="Pronounce"
+        android:textColor="@android:color/background_light"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView_translation"
-        app:layout_constraintVertical_bias="0.521" />
+        app:layout_constraintVertical_bias="0.577" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -23,9 +23,12 @@
 
     <Button
         android:id="@+id/button_savePhrase"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="126dp"
+        android:layout_height="54dp"
+        android:background="@color/colorPrimary"
         android:text="@string/save"
+        android:textColor="@android:color/background_light"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -39,8 +42,11 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="@string/add_an_english_word_or_phrase_that_you_want_to_master_in_another_language"
+        android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/editText_addphrase"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.502" />
 </androidx.constraintlayout.widget.ConstraintLayout>
